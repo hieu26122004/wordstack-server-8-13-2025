@@ -1,0 +1,4 @@
+node_modules
+*.sql
+DATABASE_README.md
+.env
