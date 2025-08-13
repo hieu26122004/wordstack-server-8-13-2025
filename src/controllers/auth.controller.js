@@ -110,6 +110,8 @@ export const login = handleAsyncError(async (req, res) => {
 export const refreshToken = handleAsyncError(async (req, res) => {
   const { rt } = req.cookies;
 
+  console.log("rt", rt);
+
   if (!rt) {
     return res
       .status(httpStatus.UNAUTHORIZED)
@@ -124,6 +126,7 @@ export const refreshToken = handleAsyncError(async (req, res) => {
       .status(httpStatus.OK)
       .json(returnSuccess("Token refreshed.", at));
   } catch (err) {
+    console.log("err", err);
     res.clearCookie("rt");
     return res
       .status(httpStatus.UNAUTHORIZED)

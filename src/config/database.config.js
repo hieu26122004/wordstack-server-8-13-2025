@@ -15,6 +15,7 @@ export default {
         rejectUnauthorized: false,
       },
     },
+    logging: false,
   },
   production: {
     username: DB_USER,
@@ -30,6 +31,7 @@ export default {
         rejectUnauthorized: false,
       },
     },
+    logging: false,
   },
   test: {
     username: DB_USER,
@@ -45,5 +47,6 @@ export default {
         rejectUnauthorized: false,
       },
     },
+    logging: false,
   },
 };
