@@ -99,7 +99,7 @@ export const login = handleAsyncError(async (req, res) => {
     httpOnly: true,
     secure: ENV === "production",
     maxAge: JWT_REFRESH_EXPIRES_IN,
-    sameSite: "strict",
+    sameSite: "none",
   });
 
   return res
@@ -174,7 +174,7 @@ export const loginWithGoogle = handleAsyncError(async (req, res, next) => {
         httpOnly: true,
         secure: ENV === "production",
         maxAge: JWT_REFRESH_EXPIRES_IN,
-        sameSite: "strict",
+        sameSite: "none",
       });
       res.send(`
         <!DOCTYPE html>
@@ -201,7 +201,7 @@ export const logout = handleAsyncError(async (req, res) => {
   res.clearCookie("rt", {
     httpOnly: true,
     secure: ENV === "production",
-    sameSite: "strict",
+    sameSite: "none",
   });
 
   if (rt) {
